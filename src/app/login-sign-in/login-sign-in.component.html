@@ -1,0 +1,51 @@
+<div class="body_div" style="background-color:lemonchiffon;">
+    <h1 style='text-align:center; margin-top: 15px; font-weight: bold; color: chartreuse;'>Big Basket</h1>
+
+    <div class="login_div">
+        <h2>Login</h2>
+    
+        <form #myForm= 'ngForm'>
+      
+            <div class="form-group">
+                <label for="uName" style="font-size: 20px;">Email</label>
+                <input type="text" id="uName" name="email" placeholder="Enter Email" class="form-control" #user='ngModel' [(ngModel)]='myUser.email' [class.is-invalid]='user.invalid && user.touched'  required>
+    
+                <small class="text-danger" [class.d-none]='user.valid || user.untouched' style="background-color: white;padding:10px; border:3px solid greenyellow; font-weight: bold; display:block; width: 200px; margin-top: 10px;">**Email is required</small>
+            </div>
+    
+            <div class="form-group">
+                <label for="pass" style="font-size: 20px;">Password</label>
+                <input type="password" id="pass" name="passWord" placeholder="Enter Password" class="form-control" #pass='ngModel' [(ngModel)]='myUser.password' pattern="^\d{10}$" [class.is-invalid]='pass.invalid && pass.touched' required>
+                
+                <div *ngIf='pass.errors && pass.touched'>
+                    <small class="text-danger" *ngIf='pass.errors.required' style="background-color: white;padding:10px; border:3px solid greenyellow; font-weight: bold; display:block; width: 200px; margin-top: 10px;">**Password is required</small>
+                    <small class="text-danger" *ngIf='pass.errors.pattern' style="background-color: white;padding:10px; border:3px solid greenyellow; font-weight: bold; display:block; width: 250px; margin-top: 10px;">**Password must be 10 digits</small>
+                </div>
+    
+            </div>
+
+            <div class="alert alert-success mt-5 mb-5" *ngIf=hide_show_Error>
+                {{text_Error}}
+            </div>
+    
+            <button type="button" class="form_btn" [disabled]='myForm.form.invalid' (click)='submitData(myForm)'>Sign In</button>
+    
+            <p>By continuing you agree to BigBasket's <a href="#">Condition's of Use </a> and <a href="#">Privacy Notice.</a></p>
+    
+            <p style="width:120px;"><a href="#">Need help?</a></p>
+    
+        </form>
+    
+    </div>
+    
+    <div class="lower_div">
+    <hr style="border: 3px solid grey;">
+    <h3 style="text-align: center; color:darkkhaki">New to BigBasket</h3>
+    
+    <button type="button" class="account_btn" routerLink='/createAccount'>Create Your BigBasket Account</button>
+    
+    </div>
+    
+
+</div>
+

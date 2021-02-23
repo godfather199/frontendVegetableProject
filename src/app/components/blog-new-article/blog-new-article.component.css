@@ -1,0 +1,25 @@
+.image_Div {
+    background-image: url('/assets/images/grapes.jpg');
+    background-position: center;
+    background-size: cover;
+    height:700px;
+}
+
+.div_Container {
+    border: 5px solid black;
+    border-radius: 8px;
+    width:900px;
+    padding: 20px;
+    height:580px;
+    background-color:gold;
+}
+
+input {
+    border: 3px solid red;
+    background-color: cornsilk;
+}
+
+textarea {
+    border: 3px solid red;
+    background-color: cornsilk;
+}

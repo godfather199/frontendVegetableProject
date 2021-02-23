@@ -1,0 +1,53 @@
+<div class="back_img_div">
+<h1 style="color:greenyellow; font-weight:bold; margin-top: 20px; margin-left:100px;">Your Account</h1>
+
+<div class="flex-container">
+    
+    <div class="orders_div" (click)='goToOrder()'>
+        <h3 style="margin-top: 10px; margin-left: -80px;"><i class='fas fa-toolbox' style='font-size:40px;color:red'></i>&nbsp; &nbsp; Your Orders</h3>
+        <small style="display: block; margin-top: -10px;">Track, return, or buy things again</small>
+    </div>
+
+    <div class="orders_div" (click)='goToLogin()'>
+        <h3 style="margin-top: 10px; margin-left: -80px;"><i class='fas fa-unlock-alt' style='font-size:40px;color:red'></i>&nbsp; &nbsp;Login & Security</h3>
+        <small style="display: block; margin-top: -10px;">Edit login, name and mobile number</small>
+    </div>
+
+    <div class="orders_div">
+        <h3 style="margin-top: 10px; margin-left: -80px;"><i class='fas fa-id-card' style='font-size:40px;color:red'></i>&nbsp; &nbsp; Membership</h3>
+        <small style="display: block; margin-top: -10px;">View benefits and payment setting</small>
+    </div>  
+
+    <div class="orders_div">
+        <h3 style="margin-top: 10px; margin-left: -80px;"><i class='fas fa-map-marker-alt' style='font-size:40px;color:red'></i>&nbsp; &nbsp; Your Addresses</h3>
+        <small style="display: block; margin-top: -10px;">Edit addresses for orders and gifts</small>
+    </div>
+
+    <div class="orders_div">
+        <h3 style="margin-top: 10px; margin-left: -80px;"><i class='fab fa-cc-visa' style='font-size:40px;color:red'></i>&nbsp; &nbsp; Payment Options</h3>
+        <small style="display: block; margin-top: -10px;">Edit or add payment methods</small>
+    </div>
+
+    <div class="orders_div">
+        <h3 style="margin-top: 10px; margin-left: -80px;"><i class='fas fa-shopping-bag' style='font-size:40px;color:red'></i>&nbsp; &nbsp; BigBasket  Balance</h3>
+        <small style="display: block; margin-top: -10px;">Add money to your balance</small>
+    </div>  
+  </div>
+
+  <h1 style="color: orange; margin-left: 100px;">Inspired By Your Browsing History</h1><br>
+
+  <div class="flex-container_2">
+
+    <div *ngFor='let vegetable of vegetable_list'>
+    <div class="card" style="cursor: pointer;">
+        <img [src]='vegetable.url' style="width: 100%;" >
+        <h1>{{vegetable.productName}}</h1>
+        <p class="price">$19.99</p>
+        <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+        <p><button>Add to Cart</button></p>
+      </div>
+</div>
+
+  </div>
+</div>
+  

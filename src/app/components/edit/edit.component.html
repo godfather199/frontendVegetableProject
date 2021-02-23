@@ -1,0 +1,29 @@
+<div class="image_Div">
+  <div class="container-fluid div_Container">
+
+    <h1 class="text-center text-info">Edit Article</h1>
+
+    <form #myForm='ngForm'>
+    
+      <div class="form-group">
+          <label style="font-weight: bold; color: darkgreen; font-size: 20px;">Author</label>
+          <input type="text" class="form-control" name='author' [(ngModel)]='blog_Data.author'>
+      </div>
+    
+      <div class="form-group">
+          <label style="font-weight: bold; color: darkgreen; font-size: 20px;">Title</label>
+          <input type="text" class="form-control" name='title' [(ngModel)]='blog_Data.title'>
+      </div>
+    
+      <div class="form-group">
+          <label style="font-weight: bold; color: darkgreen; font-size: 20px;">Description</label>
+        <textarea cols="10" rows="5" class="form-control mb-5" name='description' [(ngModel)]='blog_Data.description'></textarea>
+      </div>
+
+      <button type="button" class="btn btn-secondary btn-lg shadow-lg" routerLink='/list'>Cancel</button>&nbsp;&nbsp;&nbsp;
+      <button type="button" class="btn btn-primary btn-lg shadow-lg" (click)='updateData()'>Save</button>
+    
+    </form>
+
+</div>
+</div>

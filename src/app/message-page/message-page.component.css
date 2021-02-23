@@ -1,0 +1,16 @@
+.content_Div {
+    border: 3px solid red;
+    padding: 20px;
+    width:600px;
+    height: 280px;
+    transform: translate(500px, 150px);
+    color:darkmagenta;
+    background-color:lightblue;
+}
+
+.img_Div {
+    background-image: url('/assets/images/mix-fruit-2.jpg');
+    background-position: center;
+    background-size: cover;
+    height:800px;
+}

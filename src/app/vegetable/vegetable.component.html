@@ -1,0 +1,56 @@
+<div class="body_container">
+    <h1 class="glow">Vegetable List</h1>
+
+    <!-- <div class="div_button">
+        <button class="button">Click Me</button>
+    </div>
+     -->
+
+    <div class='flex_container'>
+        <div *ngFor='let vegetable of vegetable_list'>
+            <div class="card" (click)= 'vegDetails(vegetable)' style="cursor: pointer;">
+                <img [src]='vegetable.url' style="width: 100%;" >
+                <h1>{{vegetable.productName}}</h1>
+                <p class="price">$19.99</p>
+                <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+                <p><button>Add to Cart</button></p>
+              </div>
+        </div>
+    </div>
+
+</div>
+
+<!--
+<div class="body_container">
+    <h1 class="glow">Vegetable List</h1>
+
+    <div class='flex_container'>
+        <div *ngFor='let vegetable of vegetable_list'>
+            <img [src]='vegetable.url' style="width: 100%;" (click)= 'vegDetails(vegetable)'>
+        </div>
+    </div>
+
+</div>
+-->
+
+
+<!--
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Image</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor='let vegetable of vegetable_list'>
+            <td>{{vegetable.id}}</td>
+            <td>
+                <img [src]='vegetable.url' style="width: 100%;" (click)= 'vegDetails(vegetable)'>
+             </td>
+        </tr>
+    </tbody>
+</table>
+
+</div>
+-->

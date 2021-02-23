@@ -1,0 +1,26 @@
+.body_Img {
+    background-image: url('/assets/images/universe.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.outer_div {
+    border: 2px solid red;
+    width:50%;
+    padding: 30px;
+    margin: auto;
+    background-color: darkkhaki;
+    color:yellow;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.sign_btn {
+    margin-top:15px;
+    margin-left: 170px;
+    width: 55%;
+    padding: 4px;
+    border-radius: 5px;
+    background-color: lightskyblue;
+}

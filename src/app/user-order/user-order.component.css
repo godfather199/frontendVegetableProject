@@ -1,0 +1,160 @@
+.order_background_image {
+    background-image: url('/assets/images/world.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.header_div {
+    margin-left: 100px;
+    margin-top: 40px;
+}
+
+.header_div input {
+    width:30%;
+    padding: 5px;
+    margin-left: 200px;
+    border-radius: 5px;
+}
+
+.header_div button {
+    padding: 5px;
+    border-radius: 5px;
+    background-color: darkkhaki;
+    font-weight: bold;
+}
+
+.package_div {
+    /* border:2px solid red; */
+    margin-top: 50px;
+    margin-left: 80px;
+    height:1900px;
+}
+
+.outer_div {
+    border: 5px solid black;
+    height:480px;
+    margin-bottom: 30px;
+    border-radius: 15px;
+}
+
+.outer_inner_div {
+    border-bottom: 2px solid grey;
+    height:80px;
+    padding:12px;
+}
+
+.delivery_div {
+    border:5px solid orange;
+    display: flex;
+    padding:20px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    height:390px;
+}
+
+.delivery_div_1 {
+    width: 70%;
+    height:306px;
+   
+}
+
+.delivery_div_2 {
+    width:30%;
+    height:306px;
+    /* border: 2px solid purple; */
+    padding: 15px;
+}
+
+
+
+
+
+
+.flex_container {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    left: 90px;
+    border: 5px solid orange;
+    padding: 15px;
+    background-color: lightblue;
+    border-radius: 15px;
+    border-left: none;
+    border-right: none;
+}
+
+.flex_container > div {
+    height: 500px;
+    width: 300px;
+    margin: 20px;
+    overflow: hidden;
+    transition: 0.2s;
+}
+
+
+/* Product Card */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+  transition: 0.1s ease;
+}
+
+.card:hover {
+  border:10px solid greenyellow;
+  opacity: 0.9;
+  border-top-right-radius: 100px;
+  border-bottom-left-radius: 100px;
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}
+
+.open_div_1 {
+    padding:15px;
+    float:left;
+    background-color: darkkhaki;
+}
+
+.open_div_2 {
+    padding:15px;
+    float:left;
+    margin-left: 30px;
+    background-color: darkkhaki;
+}
+
+.open_div_3 {
+    padding:15px;
+    width:210px;
+    float:right;
+    background-color: darkkhaki;
+}
+
+.open_div_4 {
+    border: 5px dashed purple;
+    border-radius: 15px;
+    margin-top:150px;
+    height:250px;
+    padding:15px;
+    background-color: slategray;
+}

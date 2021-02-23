@@ -1,0 +1,122 @@
+[
+    {
+      "id": 1,
+      "title": "accusamus beatae ad facilis cum similique qui sunt",
+      "url": "../assets/images/mix-fruit.jpg",
+      "thumbnailUrl": "https://via.placeholder.com/150/92c952",
+      "name": "quo vero reiciendis velit similique earum",
+    "email": "Jayne_Kuhic@sydney.com",
+    "body": "est natus enim nihil est dolore omnis voluptatem numquam\net omnis occaecati quod ullam at\nvoluptatem error expedita pariatur\nnihil sint nostrum voluptatem reiciendis et",
+    "productName": "Basket of Joy",
+    "price":50
+    },
+    
+    {
+      
+      "id": 2,
+      "title": "reprehenderit est deserunt velit ipsam",
+      "url": "../assets/images/grapes.jpg",
+      "thumbnailUrl": "https://via.placeholder.com/150/771796",
+      "name": "quo vero reiciendis velit similique earum",
+    "email": "Jayne_Kuhic@sydney.com",
+    "body": "est natus enim nihil est dolore omnis voluptatem numquam\net omnis occaecati quod ullam at\nvoluptatem error expedita pariatur\nnihil sint nostrum voluptatem reiciendis et",
+    "productName": "Grapes",
+    "price":50
+    },
+    {
+     
+      "id": 3,
+      "title": "officia porro iure quia iusto qui ipsa ut modi",
+      "url": "../assets/images/mix-fruit-4.jpg",
+      "thumbnailUrl": "https://via.placeholder.com/150/24f355",
+      "name": "quo vero reiciendis velit similique earum",
+    "email": "Jayne_Kuhic@sydney.com",
+    "body": "est natus enim nihil est dolore omnis voluptatem numquam\net omnis occaecati quod ullam at\nvoluptatem error expedita pariatur\nnihil sint nostrum voluptatem reiciendis et",
+    "productName": "Plentiful Basket",
+    "price":50
+    },
+    {
+    
+      "id": 4,
+      "title": "culpa odio esse rerum omnis laboriosam voluptate repudiandae",
+      "url": "../assets/images/stawberry.jpg",
+      "thumbnailUrl": "https://via.placeholder.com/150/d32776",
+      "name": "quo vero reiciendis velit similique earum",
+    "email": "Jayne_Kuhic@sydney.com",
+    "body": "est natus enim nihil est dolore omnis voluptatem numquam\net omnis occaecati quod ullam at\nvoluptatem error expedita pariatur\nnihil sint nostrum voluptatem reiciendis et",
+    "productName": "Stawberry",
+    "price":50
+    },
+    {
+     
+      "id": 5,
+      "title": "culpa odio esse rerum omnis laboriosam voluptate repudiandae",
+      "url": "../assets/images/dragon_fruit.jpg",
+      "thumbnailUrl": "https://via.placeholder.com/150/d32776",
+      "name": "quo vero reiciendis velit similique earum",
+    "email": "Jayne_Kuhic@sydney.com",
+    "body": "est natus enim nihil est dolore omnis voluptatem numquam\net omnis occaecati quod ullam at\nvoluptatem error expedita pariatur\nnihil sint nostrum voluptatem reiciendis et",
+    "productName": "Dragon Fruit",
+    "price":50
+    },
+    {
+      "id": 6,
+      "title": "accusamus beatae ad facilis cum similique qui sunt",
+      "url": "../assets/images/kiwi.jpg",
+      "thumbnailUrl": "https://via.placeholder.com/150/92c952",
+      "name": "quo vero reiciendis velit similique earum",
+    "email": "Jayne_Kuhic@sydney.com",
+    "body": "est natus enim nihil est dolore omnis voluptatem numquam\net omnis occaecati quod ullam at\nvoluptatem error expedita pariatur\nnihil sint nostrum voluptatem reiciendis et",
+    "productName": "Kiwi",
+    "price":50
+    },
+    {
+      
+      "id": 7,
+      "title": "reprehenderit est deserunt velit ipsam",
+      "url": "../assets/images/grapes.jpg",
+      "thumbnailUrl": "https://via.placeholder.com/150/771796",
+      "name": "quo vero reiciendis velit similique earum",
+    "email": "Jayne_Kuhic@sydney.com",
+    "body": "est natus enim nihil est dolore omnis voluptatem numquam\net omnis occaecati quod ullam at\nvoluptatem error expedita pariatur\nnihil sint nostrum voluptatem reiciendis et",
+    "productName": "Cherry",
+    "price":50
+    },
+    {
+     
+      "id": 8,
+      "title": "officia porro iure quia iusto qui ipsa ut modi",
+      "url": "../assets/images/stawberry.jpg",
+      "thumbnailUrl": "https://via.placeholder.com/150/24f355",
+      "name": "quo vero reiciendis velit similique earum",
+    "email": "Jayne_Kuhic@sydney.com",
+    "body": "est natus enim nihil est dolore omnis voluptatem numquam\net omnis occaecati quod ullam at\nvoluptatem error expedita pariatur\nnihil sint nostrum voluptatem reiciendis et",
+    "productName": "Stawberry",
+    "price":50
+    },
+    {
+    
+      "id": 9,
+      "title": "culpa odio esse rerum omnis laboriosam voluptate repudiandae",
+      "url": "../assets/images/berry.jpg",
+      "thumbnailUrl": "https://via.placeholder.com/150/d32776",
+      "name": "quo vero reiciendis velit similique earum",
+    "email": "Jayne_Kuhic@sydney.com",
+    "body": "est natus enim nihil est dolore omnis voluptatem numquam\net omnis occaecati quod ullam at\nvoluptatem error expedita pariatur\nnihil sint nostrum voluptatem reiciendis et",
+    "productName": "Berry",
+    "price":50
+    },
+    {
+     
+      "id": 10,
+      "title": "culpa odio esse rerum omnis laboriosam voluptate repudiandae",
+      "url": "../assets/images/mix-fruit-4.jpg",
+      "thumbnailUrl": "https://via.placeholder.com/150/d32776",
+      "name": "quo vero reiciendis velit similique earum",
+    "email": "Jayne_Kuhic@sydney.com",
+    "body": "est natus enim nihil est dolore omnis voluptatem numquam\net omnis occaecati quod ullam at\nvoluptatem error expedita pariatur\nnihil sint nostrum voluptatem reiciendis et",
+    "productName": "Paradise Fruits",
+    "price":50
+    }
+  
+  ]

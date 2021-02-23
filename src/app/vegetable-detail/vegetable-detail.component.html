@@ -1,0 +1,693 @@
+<div class="body_container">
+<h1 class="glow">Vegetable Detail</h1>
+
+  <div style="display: inline-block; height: 100px; width: 500px; margin-left: 100px; background-color: lightcoral;">
+
+    <button (click)= 'goBack()' style="margin-left: 30px; margin-top: 20px; padding:10px; width: 100px; font-weight: bold; font-size: 25px; border-radius: 10px; color: white; background-color: cornflowerblue; border: none; outline: none;">Back</button>&nbsp;&nbsp;
+
+<button (click)= 'goPrevious()' style="margin-left: 30px; margin-top: 20px; padding:10px; width: 140px; font-weight: bold; font-size: 25px; border-radius: 10px; color: white; background-color: cornflowerblue; border: none; outline: none;">Previous</button>&nbsp;&nbsp;
+<button (click)= 'goNext()' style="margin-left: 30px; margin-top: 20px; padding:10px; width: 100px; font-weight: bold; font-size: 25px; border-radius: 10px; color: white; background-color: cornflowerblue; border: none; outline: none;">Next</button>
+
+  </div>
+    
+
+<div class="cart_div">
+  <button type="button" (click)='cartFunction()' class='cart_div_btn_1'>Add To Cart</button><br>
+  <!-- <button type="button" routerLink='/cartPage' class="cart_div_btn_2">Go To Cart</button> -->
+</div>
+
+<div class='flex_box'>
+    <div class="img_container">
+        <img [src]='container.url' style='width:100%;'  class="thumbnail zoom">
+    </div>
+    
+    <div class='container2'>
+        <a href="#">Fresho</a>
+        <h3>{{container.productName}}</h3>
+        <p>MRP:    <span style="text-decoration:line-through;">Rs.{{container.price}}</span> <span style="font-weight: bold;">Rs. 40</span>&nbsp; <small style="color: purple;">You Save: 38%</small>&nbsp;<small style="color:royalblue;">(Inclusive of all taxes)</small></p>
+
+
+
+        <button type="button" (click)= 'counterMinus()'><i class='fas fa-minus' style='font-size:36px'></i></button>&nbsp;&nbsp;&nbsp;
+
+        <span style="font-weight: bold; font-size: 35px;">{{counter}}</span>&nbsp;&nbsp;&nbsp;
+
+        <button type="button" (click)= 'counterPlus()'><i class='fas fa-plus' style='font-size:36px;color:red'></i></button><br><br>
+
+
+
+        <button type="button" data-toggle='modal' data-target='#myModal' class='button_modal'>FREQUENTLY BOUGHT ITEMS WITH THIS PRODUCT <i class='fas fa-greater-than' style='font-size:36px'></i></button>
+        <br>
+
+    <!-- Modal Box-->
+    <div class="modal" id="myModal">
+        <div class="">
+          <div class="modal-content" style="background-color:lightgray;">
+          
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h3 class="modal-title">FREQUENTLY BROUGHT TOGETHER</h3>
+              <button type="button" class="close" data-dismiss="modal">×</button>
+            </div>
+            
+            <!-- Modal body -->
+            <div class="modal-body custom_body" style="display: flex;">
+
+              <div class="card" *ngFor='let img of img_storage'>
+                <img [src]='img.img_url' alt="Denim Jeans" style="width:100%">
+                <h1>{{img.product}}</h1>
+                <p class="price">$19.99</p>
+                <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+
+                <p><button *ngIf='isAlive' (click)='cart_btn()'>Add to Cart</button></p>
+                
+                <div *ngIf='!isAlive'>
+
+                  <button type="button" (click)= 'counterMinus_modal()'><i class='fas fa-minus' style='font-size:20px'></i></button>&nbsp;&nbsp;&nbsp;
+
+                <span style="font-weight: bold; font-size: 35px;">{{counter_modal}}</span>&nbsp;&nbsp;&nbsp;
+
+                <button type="button" (click)= 'counterPlus_modal()'><i class='fas fa-plus' style='font-size:20px;color:red'></i></button><br><br>
+
+              </div>
+
+              </div>
+
+                
+              <!-- Previous Version -->
+              <!--
+                <div class="card">
+                    <img src="assets/images/category-2.jpg" alt="Denim Jeans" style="width:100%">
+                    <h1>Stawberry</h1>
+                    <p class="price">$19.99</p>
+                    <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+                    <p><button *ngIf='isAlive' (click)='cart_btn()'>Add to Cart</button></p>
+                    
+                    <div *ngIf='!isAlive'>
+
+                      <button type="button" (click)= 'counterMinus()'><i class='fas fa-minus' style='font-size:20px'></i></button>&nbsp;&nbsp;&nbsp;
+
+                    <span style="font-weight: bold; font-size: 35px;">{{counter}}</span>&nbsp;&nbsp;&nbsp;
+
+                    <button type="button" (click)= 'counterPlus()'><i class='fas fa-plus' style='font-size:20px;color:red'></i></button><br><br>
+
+                  </div>
+
+                  </div>
+
+                  <div class="card" style="float: left;">
+                    <img src="assets/images/product-5.jpg" alt="Denim Jeans" style="width:100%">
+                    <h1>Tomato</h1>
+                    <p class="price">$19.99</p>
+                    <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+                    <p><button *ngIf='isAlive' (click)='cart_btn()'>Add to Cart</button></p>
+                    
+                    <div *ngIf='!isAlive'>
+
+                      <button type="button" (click)= 'counterMinus()'><i class='fas fa-minus' style='font-size:20px'></i></button>&nbsp;&nbsp;&nbsp;
+
+                    <span style="font-weight: bold; font-size: 35px;">{{counter}}</span>&nbsp;&nbsp;&nbsp;
+
+                    <button type="button" (click)= 'counterPlus()'><i class='fas fa-plus' style='font-size:20px;color:red'></i></button><br><br>
+
+                  </div>
+                  </div>
+
+                  <div class="card">
+                    <img src="assets/images/product-7.jpg" alt="Denim Jeans" style="width:100%">
+                    <h1>Baby Carrot</h1>
+                    <p class="price">$19.99</p>
+                    <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+                    <p><button *ngIf='isAlive' (click)='cart_btn()'>Add to Cart</button></p>
+                    
+                    <div *ngIf='!isAlive'>
+
+                      <button type="button" (click)= 'counterMinus()'><i class='fas fa-minus' style='font-size:20px'></i></button>&nbsp;&nbsp;&nbsp;
+
+                    <span style="font-weight: bold; font-size: 35px;">{{counter}}</span>&nbsp;&nbsp;&nbsp;
+
+                    <button type="button" (click)= 'counterPlus()'><i class='fas fa-plus' style='font-size:20px;color:red'></i></button><br><br>
+
+                  </div>
+                  </div>
+
+                  <div class="card">
+                    <img src="assets/images/product-3.jpg" alt="Denim Jeans" style="width:100%">
+                    <h1>Green Beans</h1>
+                    <p class="price">$19.99</p>
+                    <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+                    <p><button *ngIf='isAlive' (click)='cart_btn()'>Add to Cart</button></p>
+                    
+                    <div *ngIf='!isAlive'>
+
+                      <button type="button" (click)= 'counterMinus()'><i class='fas fa-minus' style='font-size:20px'></i></button>&nbsp;&nbsp;&nbsp;
+
+                    <span style="font-weight: bold; font-size: 35px;">{{counter}}</span>&nbsp;&nbsp;&nbsp;
+
+                    <button type="button" (click)= 'counterPlus()'><i class='fas fa-plus' style='font-size:20px;color:red'></i></button><br><br>
+
+                  </div>
+                  </div>
+                -->
+                <!-- Previous Version-->
+                
+                </div>
+            
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    <!-- Modal Box -->
+
+
+        <p style="color: lightslategray;"><i class='fas fa-motorcycle' style='font-size:36px'></i>Express: Today 5:30PM - 7:30PM</p>
+    </div>
+    
+</div>
+</div>
+
+<div class="body_container_lower">
+  
+  <h1 style="color: red; margin-left: 15px; ">Fresho {{container.productName}} - Local</h1>
+
+  <div class='parent_accordion' style="display: flex; margin-top: 20px;">
+  
+    <div class="accordion_column_1">
+ 
+      <!-- Accordion -->
+     <div id="accordion1">
+     
+       <div class="card">
+       
+         <div class="card-header"> 
+           <a class="card-link" data-toggle="collapse" href="#collapseOne1">
+             About the Product
+           </a>
+         </div>
+         
+         <div id="collapseOne1" class="collapse " data-parent="#accordion1">
+           <div class="card-body">
+             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+           </div>
+         </div>
+         
+       </div>
+       
+       <div class="card">
+         <div class="card-header">
+           <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo1">
+           Nutritional Facts
+         </a>
+         </div>
+         <div id="collapseTwo1" class="collapse" data-parent="#accordion1">
+           <div class="card-body">
+             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+           </div>
+         </div>
+       </div>
+       <div class="card">
+         <div class="card-header">
+           <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree1">
+             Benifits
+           </a>
+         </div>
+         <div id="collapseThree1" class="collapse" data-parent="#accordion1">
+           <div class="card-body">
+             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+           </div>
+         </div>
+       </div>
+     </div>
+     <!-- Accordion -->
+ 
+   </div>
+   
+   
+   <div class="accordion_column_2">
+ 
+      <!-- Accordion -->
+     <div id="accordion2">
+     
+       <div class="card">
+       
+         <div class="card-header"> 
+           <a class="card-link" data-toggle="collapse" href="#collapseOne2">
+             Other Product Info
+           </a>
+         </div>
+         
+         <div id="collapseOne2" class="collapse " data-parent="#accordion2">
+           <div class="card-body">
+             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+           </div>
+         </div>
+         
+       </div>
+       
+       <div class="card">
+         <div class="card-header">
+           <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo2">
+           Variable Weight Policy
+         </a>
+         </div>
+         <div id="collapseTwo2" class="collapse" data-parent="#accordion2">
+           <div class="card-body">
+             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+           </div>
+         </div>
+       </div>
+       <div class="card">
+         <div class="card-header">
+           <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree2">
+             Seller's Information
+           </a>
+         </div>
+         <div id="collapseThree2" class="collapse" data-parent="#accordion2">
+           <div class="card-body">
+             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+           </div>
+         </div>
+       </div>
+     </div>
+     <!-- Accordion -->
+ 
+   </div>
+ 
+   <div class="accordion_column_3">
+ 
+   <!-- Accordion -->
+   <div id="accordion3">
+     
+     <div class="card">
+     
+       <div class="card-header"> 
+         <a class="card-link" data-toggle="collapse" href="#collapseOne3">
+           Bulk Buy Information
+         </a>
+       </div>
+       
+       <div id="collapseOne3" class="collapse " data-parent="#accordion3">
+         <div class="card-body">
+           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+         </div>
+       </div>
+       
+     </div>
+     
+     <div class="card">
+       <div class="card-header">
+         <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo3">
+         Contact Seller
+       </a>
+       </div>
+       <div id="collapseTwo3" class="collapse" data-parent="#accordion3">
+         <div class="card-body">
+           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+         </div>
+       </div>
+     </div>
+     <div class="card">
+       <div class="card-header">
+         <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree3">
+           Daily Offers Information
+         </a>
+       </div>
+       <div id="collapseThree3" class="collapse" data-parent="#accordion3">
+         <div class="card-body">
+           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+         </div>
+       </div>
+     </div>
+   </div>
+   <!-- Accordion -->
+ 
+   </div>
+
+   <div class="check_div">
+    <table>
+      <tr>
+        <th style="width:50%">Features</th>
+        <th>Basic</th>
+        <th>Pro</th>
+      </tr>
+      <tr>
+        <td>Sample text</td>
+        <td><i class="fa fa-remove"></i></td>
+        <td><i class="fa fa-check"></i></td>
+      </tr>
+      <tr>
+        <td>Sample text</td>
+        <td><i class="fa fa-check"></i></td>
+        <td><i class="fa fa-check"></i></td>
+      </tr>
+      <tr>
+        <td>Sample text</td>
+        <td><i class="fa fa-check"></i></td>
+        <td><i class="fa fa-check"></i></td>
+      </tr>
+      <tr>
+        <td>Sample text</td>
+        <td><i class="fa fa-remove"></i></td>
+        <td><i class="fa fa-check"></i></td>
+      </tr>
+      <tr>
+        <td>Sample text</td>
+        <td><i class="fa fa-check"></i></td>
+        <td><i class="fa fa-check"></i></td>
+      </tr>
+    </table>
+   </div>
+  
+  </div>
+
+</div>
+
+<div class="comlete_Img_Div">
+<div class="offer_div">
+  <h4 style="color: orange;">Save Extra with 3 offers</h4>
+  <p><i class='fas fa-caret-right' style='font-size:25px'></i>&nbsp;<span style="color: orange;">Bank Offer (2):</span> &nbsp;<span style="color: grey;">10% Instant discount with AU Bank Debit Cards</span>&nbsp; <a href='#'>Here's how</a></p>
+
+  <p><i class='fas fa-caret-right' style='font-size:25px'></i>&nbsp;<span style="color: grey;">5% Instant discount with HSBC Cashback card</span>&nbsp;<a href='#'>Here's how</a></p>
+
+  <p><i class='fas fa-caret-right' style='font-size:25px'></i>&nbsp;<span style="color: orange;">Cashback (2):</span>&nbsp; <span style="color: grey;">Get 25% back up to ₹150 with</span>&nbsp; <a href='#'>Amazon Pay Later</a> &nbsp;<span style="color: grey;">Valid on 1st Pay Later transaction</span>&nbsp; <a href="#">Check Eligibility</a></p>
+
+  <p><i class='fas fa-caret-right' style='font-size:25px'></i>&nbsp;<span style="color: grey;">5% back with </span>&nbsp; <a href="#">Amazon Pay ICICI Bank Credit card </a> <span style="color: grey;">for Prime-members. 3% back for everybody else</span> &nbsp;<a href='#'>Here's how</a></p>
+
+  <p><i class='fas fa-caret-right' style='font-size:25px'></i>&nbsp;<span style="color: orange;">Partner Offers (1):</span>&nbsp; <span style="color: grey;">Get GST invoice and save up to 28% on business purchases.</span> &nbsp;<a href='#'>Sign up for free</a>&nbsp; <a href="#">Here's how</a></p>
+</div>
+
+<div class="question_div">
+  <h3>Have a question?</h3>
+  <p>Find answers in product info, Q&As, reviews</p>
+  <input type="text" placeholder="Type your question or keyword" #myInput (keyup)='check_input(myInput.value)'>
+</div>
+
+<div class="hide_div" *ngIf= hide_element>
+  <ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="tab" href="#all" style="font-weight:bold; font-size:20px">All</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#menu1" style="font-weight:bold; font-size:20px">Product Information</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#menu2" style="font-weight:bold; font-size:20px">Customer Q&A's</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#menu3" style="font-weight:bold; font-size:20px">Customer Reviews</a>
+    </li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+
+    <div id="all" class="container tab-pane active" style="background-color: burlywood; padding: 20px;"><br>
+      <p>Hmm, no matches. To get an answer, try different keywords or post your question to the community.</p>
+
+      <div style="border:3px solid black; padding:10px; background-color:lightblue;">
+        <h5>Don't see the answer you're looking for? &nbsp;<a href='#' style="border:2px solid purple; padding:5px;">Post your question</a></h5>
+      </div>
+      
+      <div style="margin-top: 15px;">
+        <p>Customers also asked</p>
+        <h3 style="display: inline;"><a href='#' class="badge badge-primary">I want it in 3 different colors</a></h3><br><br>
+
+        <h3 style="display: inline;"><a href='#' class="badge badge-primary">I had purchased it 6 months back and this was soaking fine.Now it does not work</a></h3><br><br>
+
+        <h3 style="display: inline;"><a href='#' class="badge badge-primary">Can it be used for one year old baby</a></h3>&nbsp;&nbsp;
+
+        <h3 style="display: inline;"><a href='#' class="badge badge-primary">What is the dimension of small size?</a></h3>
+        
+      </div>
+
+    </div>
+
+
+    <div id="menu1" class="container tab-pane fade" style="background-color: darkgray; padding: 20px;"><br>
+     <p>Quaker oats is made from 100 percent wholegrain oats, which is a natural source of carbohydrates, protein and dietary fibre</p>
+     <p> Get great savings and a great taste with Quaker oats mega saver pack and get 500g free with 1.5kg pack of Quaker oats</p>
+     <p>Garnish your wholesome bowl of oats with your favourite fruits and nuts to make it more delicious</p>
+
+     <div style="border:3px solid black; padding:10px; background-color:lightblue;">
+      <h5>Don't see the answer you're looking for? &nbsp;<a href='#' style="border:2px solid purple; padding:5px;">Post your question</a></h5>
+    </div>
+
+    <div style="margin-top: 15px;">
+      <p>Customers also asked</p>
+      <h3 style="display: inline;"><a href='#' class="badge badge-primary">How to take it for weight loss?</a></h3><br><br>
+
+      <h3 style="display: inline;"><a href='#' class="badge badge-primary">What is the origin imported or grown locally?</a></h3><br><br>
+
+      <h3 style="display: inline;"><a href='#' class="badge badge-primary">Expiry date</a></h3>&nbsp;&nbsp;
+
+      <h3 style="display: inline;"><a href='#' class="badge badge-primary">Ingredient Information?</a></h3>
+      
+    </div>
+      
+    </div>
+
+
+    <div id="menu2" class="container tab-pane fade" style="background-color:darkkhaki; padding: 15px;">
+      <p>Q: Is it whole oats or rolled oats?</p>
+      <p>A: Rolled Oats</p>
+      <p><span style="color: blue;">vinod kumar</span> on 22 October,</p><hr style="border:3px solid #f1f1f1">
+
+      <p>Q: Is it whole oats or rolled oats?</p>
+      <p>A: Rolled Oats</p>
+      <p><span style="color: blue;">vinod kumar</span> on 22 October,</p>
+      <hr style="border:3px solid #f1f1f1">
+      <p>Q: Is it whole oats or rolled oats?</p>
+      <p>A: Rolled Oats</p>
+      <p><span style="color: blue;">vinod kumar</span> on 22 October,</p><hr style="border:3px solid #f1f1f1">
+
+      <p>Q: Is it whole oats or rolled oats?</p>
+      <p>A: Rolled Oats</p>
+      <p><span style="color: blue;">vinod kumar</span> on 22 October,</p><hr style="border:3px solid #f1f1f1">
+    </div>
+
+
+
+    <div id="menu3" class="container tab-pane fade" style="background-color: wheat; padding: 15px;"><br>
+
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star"></span>
+      <span class="fa fa-star"></span><br>
+      <span>By <span style="color: cornflowerblue;">tosif khan</span>on 14 September, 2020</span><br>
+      <span>Good oats</span><br><br>
+
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star"></span>
+      <span class="fa fa-star"></span>
+      <span class="fa fa-star"></span><br>
+      <span>By <span style="color: cornflowerblue;"> Mr Rout</span>on 14 July, 2020</span><br>
+      <span>Good oats</span><br><br>
+
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star"></span><br>
+      <span>By <span style="color: cornflowerblue;">Lalith</span>on 28 September, 2020</span><br>
+      <span>Good oats</span><br><br>
+
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star"></span>
+      <span class="fa fa-star"></span>
+      <span class="fa fa-star"></span><br>
+      <span>By <span style="color: cornflowerblue;">Dileep Kumar</span>on 12 September, 2020</span><br>
+      <span>Good oats</span>
+    
+    </div>
+
+
+  </div>
+</div>
+
+
+<div style="display: flex;">
+
+<!-- User Rating -->
+<div class="user_rating_div">
+
+  <span class="heading">User Rating</span>
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star"></span>
+  <p>4.1 average based on 254 reviews.</p>
+  <hr style="border:3px solid #f1f1f1">
+  
+  <div class="row">
+  
+    <div class="side">
+      <div>5 star</div>
+    </div>
+    
+    <div class="middle">
+    
+      <div class="bar-container">
+        <div class="bar-5"></div>
+      </div>
+      
+    </div>
+    
+    <div class="side right">
+      <div>150</div>
+      
+    </div>
+    
+    <div class="side">
+      <div>4 star</div>
+    </div>
+    <div class="middle">
+      <div class="bar-container">
+        <div class="bar-4"></div>
+      </div>
+    </div>
+    <div class="side right">
+      <div>63</div>
+    </div>
+    <div class="side">
+      <div>3 star</div>
+    </div>
+    <div class="middle">
+      <div class="bar-container">
+        <div class="bar-3"></div>
+      </div>
+    </div>
+    <div class="side right">
+      <div>15</div>
+    </div>
+    <div class="side">
+      <div>2 star</div>
+    </div>
+    <div class="middle">
+      <div class="bar-container">
+        <div class="bar-2"></div>
+      </div>
+    </div>
+    <div class="side right">
+      <div>6</div>
+    </div>
+    <div class="side">
+      <div>1 star</div>
+    </div>
+    <div class="middle">
+      <div class="bar-container">
+        <div class="bar-1"></div>
+      </div>
+    </div>
+    <div class="side right">
+      <div>20</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- User Rating -->
+
+<div class="number_div">
+   <span>Value for money</span>&nbsp;&nbsp;&nbsp;
+ <span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span>&nbsp;&nbsp;
+<span>4.6</span><br>
+<hr style="border: 2px solid grey;">
+
+<span>Quality Product</span>&nbsp;&nbsp;&nbsp;
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span>&nbsp;&nbsp;
+<span>4.6</span><br>
+<hr style="border: 2px solid grey;">
+
+<span>Taste-o-Meter</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span>&nbsp;&nbsp;
+<span>4.6</span><br>
+</div>
+
+
+</div>
+
+<!-- ******* Comment Section ******** -->
+<div class="comment_div">
+
+  <h1 class='text-center' style="font-weight: bold; color:crimson">Product Review</h1>
+
+  <form #myForm='ngForm' *ngIf=data_Posted>
+
+    <div class="form-group">
+      <label style="font-weight: bold; font-size: 20px; color:darkmagenta">Username</label>
+      <input type="text" class="form-control" placeholder="Username" name='name' [(ngModel)]='myUserComment.name'>
+    </div>
+
+    <div class="form-group">
+      <label style="font-weight: bold; font-size: 20px; color:darkmagenta">Title</label>
+      <input type="text" class="form-control" placeholder="Title for comment" name='title' [(ngModel)]='myUserComment.title'>
+    </div>
+    
+    <div class="form-group">
+      <label style="font-weight: bold; font-size: 20px; color:darkmagenta">Write Comment</label>
+      <textarea cols="10" rows="5" class="form-control" placeholder="Summarize Comment" name='comment' [(ngModel)]='myUserComment.comment' style="border:3px solid green;"></textarea>
+    </div>
+
+    <button type="button" class="btn btn-warning  btn-lg shadow-lg" (click)='commentData(myForm)' *ngIf=comment_hide_button>Post Review</button>&nbsp;&nbsp;
+    <button type="button" class="btn btn-danger btn-lg shadow-lg" (click)='updateData(myForm)' *ngIf=!comment_hide_button>Update</button>&nbsp;&nbsp;
+
+  </form>
+
+  <div *ngIf=!data_Posted>
+     <h2 class="text-center" style="color:blueviolet; font-family:'Times New Roman', Times, serif">Your data has been posted scroll down below to see the result</h2><br>
+  <button type="button" class="btn btn-primary  btn-lg shadow-lg" (click)='displayForm()'>Show Form</button>&nbsp;&nbsp;
+      
+  </div>
+ 
+</div>
+
+<div style='margin-top: 45px; border: 2px solid black; width: 330px; padding: 10px; margin-left: 500px; font-weight: bold; color: white; background-color:cornflowerblue;'>
+  <h3>Top reviews from India</h3>
+  </div>
+<div class="comment_list_div" *ngFor='let comment of comment_Array'>
+  <i class='fas fa-user-circle' style='font-size:50px;color:grey'></i>&nbsp;&nbsp;&nbsp;
+  <span style="font-weight: bold; font-size: 25px; color: crimson;">{{comment.name}}</span><br>
+<span class="fa fa-star checked" style='font-size:20px;'></span>
+<span class="fa fa-star checked" style='font-size:20px;'></span>
+<span class="fa fa-star checked" style='font-size:20px;'></span>
+<span class="fa fa-star" style='font-size:20px;'></span>
+<span class="fa fa-star" style='font-size:20px;'></span>
+  <h3 style="color: darkorchid;">{{comment.title}}</h3>
+  <h5 style="color:darkseagreen">{{comment.comment}}</h5>
+  <button type="button" class="btn btn-success btn-lg shadow-lg mt-5" (click)='editData(comment)'><i class='fas fa-edit' style='font-size:28px;color:white'></i>Edit</button>&nbsp;&nbsp;
+  <button type="button" class="btn btn-info btn-lg shadow-lg mt-5" (click)='deleteData(comment)'><i class='fas fa-trash' style='font-size:28px;color:white'></i>Delete</button>
+</div>
+</div>
+
+<!-- ******* Comment Section ******** -->
+
+
+
+
+
+<!--
+    <p>Title: {{container.title}}</p>
+        <p>Name: {{container.name}}</p>
+        <p>Email: {{container.email}}</p>
+        <p>Info: {{container.body}}</p>
+-->

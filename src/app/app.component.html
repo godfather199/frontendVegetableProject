@@ -1,0 +1,49 @@
+
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
+
+  <a class="navbar-brand" href="#">BigBasket</a>
+  
+
+  <ul class="navbar-nav" style="font-weight: bold; font-size: 18px;">
+    <!-- <li class="nav-item">
+      <a class="nav-link" routerLink='/userOrder'>Orders</a>
+    </li> -->
+    <li class="nav-item">
+      <a class="nav-link" routerLink='/home' style="margin-left:20px;">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink='/vegetable' style="margin-left:20px;">Vegetable</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink='/fruit' style="margin-left:20px;">Fruit</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink='/about' style="margin-left:20px;">About</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink='/blog' style="margin-left:20px;">Blog</a>
+    </li>
+    <!-- <li class="nav-item">
+      <a class="nav-link" routerLink='/faq'>FAQ</a>
+    </li> -->
+    <li class="nav-item">
+      <a class="nav-link" routerLink='/login' style="margin-left:20px;">Accounts & Lists</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink='/cartPage' style="margin-left:20px;">Cart</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink='/saveLater' style="margin-left:20px;">Save for Later</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink='/list' style="margin-left:20px;">User Blog</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" style="margin-left: 300px; font-weight: bold; font-size: 25px; cursor: pointer;" *ngIf='authService.checkTokenPresent()' (click)='authService.logoutBtn()'>Logout</a>
+    </li>
+</ul>
+</nav>
+
+<router-outlet></router-outlet>
+

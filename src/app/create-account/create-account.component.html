@@ -1,0 +1,74 @@
+<div class="body_Img">
+
+    <h1 style='text-align:center; margin-top: 15px; font-weight: bold; color: crimson;'>Big Basket</h1>
+
+    <div class="outer_div">
+    
+     <h2>Create Account</h2>
+    
+      <form #myForm='ngForm'>
+    
+       <div class="form-group">
+           <label for='user'>Your Name</label>
+           <input type="text" id="user" name="userName" class="form-control" placeholder="Enter User name" #user='ngModel' [(ngModel)]='myUser.userName' [class.is-invalid]='user.invalid && user.touched' required>
+    
+           <small class="text-danger" [class.d-none]='user.valid || user.untouched'  style="background-color: white;padding:10px; border:3px solid greenyellow; font-weight: bold; display:block; width: 220px; margin-top: 10px;">**Username is required</small>
+       </div>
+    
+       <div class="form-group">
+           <label for="mobile">Mobile Number</label>
+           <input type="number" id="mobile" name="phone" class="form-control" placeholder="Enter mobile number" #phone='ngModel' [(ngModel)]='myUser.phone' [class.is-invalid]='phone.invalid && phone.touched' pattern="^\d{10}$" required>
+    
+           <div *ngIf='phone.errors && phone.touched'>
+            <small class="text-danger" *ngIf='phone.errors.required' style="background-color: white;padding:10px; border:3px solid greenyellow; font-weight: bold; display:block; width: 260px; margin-top: 10px;">**Phone number is required</small>
+            <small class="text-danger" *ngIf='phone.errors.pattern' style="background-color: white;padding:10px; border:3px solid greenyellow; font-weight: bold; display:block; width: 300px; margin-top: 10px;">**Phone number must be 10 digits</small>
+        </div>
+    
+       </div>
+    
+       <div class="form-group">
+           <label for="mail">Email</label>
+           <input type="email`" id="mail" name="email" class="form-control" placeholder="Enter email" #email='ngModel' [(ngModel)]='myUser.email' [class.is-invalid]='email.invalid && email.touched' required>
+            
+           <small class="text-danger" [class.d-none]='email.valid || email.untouched'  style="background-color: white;padding:10px; border:3px solid greenyellow; font-weight: bold; display:block; width: 220px; margin-top: 10px;">**Email is required</small>
+       </div>
+    
+       <div class="form-group">
+           <label for="add">Address</label>
+           <input type="text" id="add" name="address" class="form-control" placeholder="Enter residential address"  #address='ngModel' [(ngModel)]='myUser.address' [class.is-invalid]='address.invalid && address.touched' required>
+    
+           <small class="text-danger" [class.d-none]='address.valid || address.untouched'  style="background-color: white;padding:10px; border:3px solid greenyellow; font-weight: bold; display:block; width: 220px; margin-top: 10px;">**Address is required</small>
+       </div>
+    
+       <div class="form-group">
+           <label for="pass">Password</label>
+           <input type="password" id="pass" name="password" class="form-control" placeholder="Enter Password"  #pass='ngModel' [(ngModel)]='myUser.password' [class.is-invalid]='pass.invalid && pass.touched' pattern="^\d{10}$" required>
+    
+           <div *ngIf='pass.errors && pass.touched'>
+            <small class="text-danger" *ngIf='pass.errors.required' style="background-color: white;padding:10px; border:3px solid greenyellow; font-weight: bold; display:block; width: 260px; margin-top: 10px;">**Password is required</small>
+            <small class="text-danger" *ngIf='pass.errors.pattern' style="background-color: white;padding:10px; border:3px solid greenyellow; font-weight: bold; display:block; width: 300px; margin-top: 10px;">**Password must be 10 digits</small>
+            </div>
+    
+       </div>
+    
+       <small >We will send you a text to verify your phone.
+        Message and Data rates may apply.</small><br>
+
+        <!---->
+       <div class="alert alert-primary mt-5" *ngIf=show_hide_Register>{{text_Register}}</div>
+       <div class="alert alert-danger mt-5" *ngIf=show_hide_Error>{{text_Error}}</div>
+      <!---->
+    
+        <button type="button" class="sign_btn" [disabled]='myForm.form.invalid' (click)='submitData(myForm)'>Continue</button>
+    
+      </form>
+
+       
+    
+      <small style="display:block; margin-top: 15px;">Already have an account? <a routerLink='/signIn'>Sign in</a></small>
+      <small>Buying for work? <a href="#">Create a free business account</a></small>
+    
+    </div>
+
+</div>
+

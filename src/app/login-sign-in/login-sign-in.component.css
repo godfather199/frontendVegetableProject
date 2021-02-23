@@ -1,0 +1,44 @@
+.login_div {
+    border:5px solid orange;
+    width:50%;
+    height: 550px;
+    margin:auto;
+    margin-top:50px;
+    padding: 30px;
+    background-image: url('/assets/images/universe.jpg');
+    background-position: center;
+    font-weight:bold;
+    color:greenyellow;
+}
+
+.form_btn {
+    margin-top:20px;
+    width:60%;
+    margin-left: 120px;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 15px;
+    background-color: darkkhaki;
+}
+
+.login_div p {
+    margin-top: 20px;
+    margin-left:30px;
+    background-color: white;
+    color:orangered;
+    padding: 10px;
+}
+
+.lower_div {
+    height: 300px;
+}
+
+.account_btn {
+    width:30%;
+    margin-left: 550px;
+    margin-top: 25px;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 15px;
+    background-color: darkkhaki;
+}

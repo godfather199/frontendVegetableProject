@@ -1,0 +1,54 @@
+<div class='cart_back_img'>
+<h1>BigBasket- Shopping Cart</h1>
+
+<div class="flex_div" *ngFor='let a of container'>
+
+ <div class="flex_div_1">
+     <img [src]=a.currentProduct.url width='100%;'>
+ </div>
+
+ <div class="flex_div_2">
+     <span style="color:crimson; font-weight: bold; font-size:30px;">{{a.currentProduct.productName}}</span><br>
+     <span style="color: cyan; background-color:darkviolet; padding: 5px; display:inline-block; margin-top: 5px; margin-bottom: 5px;">In Stock</span><br>
+     <span style="color:darkgreen; font-weight: bold;">Eligible for free shipping</span><br>
+     <span style="color:darkgreen; font-weight: bold;">Gift option not available</span><br>
+    <div style="border:2px solid black; padding:10px; margin-top:10px; margin-bottom:10px; background-color: darkkhaki;">
+        <span style="font-weight: bold;">Total Items: &nbsp;&nbsp;<span class="badge badge-danger" style="font-weight: bold; font-size: 20px;">{{a.totalItems}}</span></span>
+    </div><br>
+     <button type="button" class="btn btn-danger" (click)= 'deleteData(a)'>Delete</button>&nbsp;&nbsp;
+     <button type="button" class="btn btn-warning" (click)='saveLater(a)'>Save For Later</button>
+ </div>
+
+ <div class="flex_div_3">
+
+    <span style="color: darkmagenta; font-weight: bold; font-size: 20px;">Items:</span>&nbsp;<span style="font-weight: bold; font-size: 22px;"> {{a.totalItems}}</span><br>
+
+     <span style="color: darkmagenta; font-weight: bold; font-size: 20px;">Price:</span>&nbsp;&nbsp;<i class="fa fa-rupee" style="font-size:25px;color:black"></i><span style="font-weight: bold; font-size: 22px;"> {{a.currentProduct.price}}</span>
+ </div>
+
+</div>
+
+<div class="subtotal_div">
+    
+    <div *ngIf=show_hide>
+        <i class='fas fa-check' style='font-size:30px;color:turquoise'></i>&nbsp;<span>Your order is eligible for FREE Delivery.</span><br>
+        <span>Select this option at checkout. <a href="#">Details</a></span>
+    </div>
+    <div *ngIf=!show_hide>
+        <i class='fas fa-times' style='font-size:30px;color:red'></i>&nbsp;<span>Your order is not  eligible for FREE Delivery.</span><br>
+        <span>Select this option at checkout. <a href="#">Details</a></span>
+    </div>
+    <span style='font-weight: bold; font-size: 20px; color:indigo;'>Subtotal({{total_Items}})&nbsp;&nbsp;<i class='fas fa-arrow-right' style='font-size:30px;color:lightseagreen;margin-top: 5px;'></i>&nbsp;&nbsp;{{subTotal}}</span>
+    <button class="total_btn" routerLink='/checkout'>Proceed To Buy</button>
+</div>
+</div>
+
+
+
+<!-- <div style='border:5px solid red; margin-left: 30px; padding: 20px;' *ngFor='let a of container'>
+    <h3>{{a.currentProduct.price}}</h3>
+    <h3>{{a.currentProduct.productName}}</h3>
+    <img [src]=a.currentProduct.url style='width:30%;'>
+    <h3>{{a.totalItems}}</h3>
+    <button type="button" class="btn btn-outline-danger" (click)= 'deleteData(a)'>Delete</button>
+</div> -->

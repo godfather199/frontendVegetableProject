@@ -1,0 +1,169 @@
+<div class="order_background_image">
+<div style="margin-left: 20px; margin-top: 10px;">
+    <a routerLink='/login'>Login</a>&nbsp;<i class='fas fa-greater-than' style='font-size:15px;color:goldenrod'></i>&nbsp;
+    <a routerLink='/userAccount'>Your Account</a>&nbsp;<i class='fas fa-greater-than' style='font-size:15px;color:goldenrod'></i>&nbsp;<span>Your Orders</span>
+</div><br>
+
+<div class="header_div">
+    <span style="font-weight: bold; font-size: 35px; color:cornflowerblue">Your Orders</span>
+<input type="text" placeholder="Search all Orders">&nbsp;&nbsp;
+<button>Search Orders</button>
+</div>
+
+
+
+<div class="package_div">
+
+    <ul class="nav nav-tabs" role="tablist">
+    
+      <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#home" style="font-weight: bold; font-size: 20px; color:darkgreen;">Orders</a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#menu1" style="font-weight: bold; font-size: 20px; color: darkgreen;">Buy Again</a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#menu2" style="font-weight: bold; font-size: 20px; color: darkgreen;">Open Orders</a>
+      </li>
+
+      <!-- <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#menu3">Cancelled Orders</a>
+      </li> -->
+      
+    </ul>
+
+  
+    <!-- Tab panes -->
+    <div class="tab-content">
+    
+      <div id="home" class="container tab-pane active" style="background-color:wheat; padding: 20px;"><br>
+        <span style="font-weight: bold;">4 orders placed in</span>&nbsp;&nbsp;&nbsp;
+        <select style="margin-bottom: 20px; padding: 8px; width: 140px; outline: none;">
+            <option value="">past 3 months</option>
+            <option *ngFor='let months of timeElem'>{{months}}</option>
+        </select>
+
+        <div class="outer_div" *ngFor='let a of [1, 2, 3, 4]'>
+          <div class="outer_inner_div">
+            <div style="float: left;  margin-left: 15px;">
+                <span><strong>ORDER PLACED</strong></span><br>
+                <span>31 December 2020</span>
+            </div>
+
+            <div style="float: left;  margin-left: 35px;">
+                <span><strong>TOTAL</strong></span><br>
+                <span>699</span>
+            </div>
+
+            <div style="float: left; margin-left: 35px;">
+                <span><strong>SHIP TO</strong></span><br>
+                <span><a href="#" style="background-color: white; padding: 3px;">Rajat Mehra</a></span>
+            </div>
+
+            <div style="float: right;  margin-left: 55px;">
+              <span><strong>ORDER # 402-7713947-6689930</strong></span><br>
+              <span><a href="#" style="background-color: white; padding: 3px;">Order Detail</a>&nbsp;&nbsp;<a href="#" style="background-color: white; padding: 3px;">Invoice</a></span>
+          </div>
+        </div>
+
+        <div class="delivery_div">
+
+          <div class="delivery_div_1">
+            <h2>Delivered 06-Jan-2021</h2>
+            <h5>Package was handed directly to customer</h5>
+             
+            <img src="/assets/images/category-3.jpg" style="width:200px;">&nbsp;&nbsp;
+            <span>ANY DESIGNER Women's Banarasi Cotton Silk Saree With</span> <br><br>
+            <h2 style="display: inline-block;"><span class="badge badge-primary">Rs 699</span>&nbsp;&nbsp;&nbsp;</h2>
+            <button class="btn btn-warning" style="margin-top: -10px;">Buy It again</button>
+          
+          </div>
+
+          <div class="delivery_div_2">
+            <button class="btn btn-warning" style="margin-bottom: 10px;">Track package</button><br>
+            <button class="btn btn-danger" style="margin-bottom: 10px;">Return or exchange items</button><br>
+            <button class="btn btn-warning" style="margin-bottom: 10px;">Share gift receipt</button><br>
+            <button class="btn btn-success" style="margin-bottom: 10px;">Leave seller feedback</button><br>
+            <button class="btn btn-info" style="margin-bottom: 10px;">Leave delivery feedback</button><br> 
+            <button class="btn btn-danger" style="margin-bottom: 10px;">Write a product review</button><br>
+            <button class="btn btn-primary" style="margin-bottom: 10px;">Archive order</button><br>
+          </div>
+         </div>
+        </div>
+      </div>
+    
+      
+      <div id="menu1" class="container tab-pane fade"><br>
+
+        <div class='flex_container'>
+          <div *ngFor='let vegetable of vegetable_list'>
+              <div class="card"  style="cursor: pointer;">
+                  <img [src]='vegetable.url' style="width: 100%;" >
+                  <h1>{{vegetable.productName}}</h1>
+                  <p class="price">$19.99</p>
+                  <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+                  <p><button>Add to Cart</button></p>
+                </div>
+          </div>
+      </div>
+        
+    </div>
+
+      <div id="menu2" class="container tab-pane fade" style='background-color:lemonchiffon;'><br>
+       
+        <div class="open_div_1">
+          <a href="#">ShoppingList</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <span>Private</span><br><br>
+          <span>Default List</span>
+        </div>
+
+        <div class="open_div_2">
+          <strong>ShoppingList</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <span>Private</span><br>
+          <span style="display: inline-block; margin-top: 15px;"><i class='fas fa-user-plus' style='font-size:30px;color:white; background-color: grey; padding: 15px; border-radius: 70px;'></i></span>&nbsp;&nbsp;&nbsp;&nbsp;
+          <button type="button" style="border-radius: 30px;"><i class='fas fa-plus' style='font-size:20px; color:blue; padding: 10px;'></i> <strong>Invite</strong></button>
+        </div>
+
+        <div class="open_div_3">
+          <span><i class='fas fa-share-alt' style='font-size:20px;color:blue;'></i>&nbsp;&nbsp;<a href="#">Send list to others</a></span><br><br>
+          <div class="dropdown">
+            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+             More
+            </button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Link 1</a>
+              <a class="dropdown-item" href="#">Link 2</a>
+              <a class="dropdown-item" href="#">Link 3</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="open_div_4" *ngFor='let userList of user_list'>
+          <img [src]='userList.url' style="width: 250px;">
+          <div style=" display: inline-block; width: 450px; margin-left: 20px; margin-top: 30px;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quam quo! Laboriosam, similique, deserunt ipsum expedita quos et qui eligendi animi cum quibusdam quod, impedit iusto dolores ea molestias ad.</div>
+
+          <div style="width:250px; height:190px; border:4px solid olivedrab; float:right; padding:10px;"> 
+            <p>Item added 6 January 2021</p>
+            
+            <button style="padding: 10px; font-weight:bold; border-radius: 10px; background-color: lightcyan;">See all buying options</button>
+            <br><br>
+            <a href="#">Remove item,</a>&nbsp;
+            <a href="#">Add comment, quantity & priority</a>
+          </div>
+          
+        </div>
+
+      </div>
+
+      <!-- <div id="menu3" class="container tab-pane fade"><br>
+       <h1>hello world</h1>
+      </div> -->
+
+    </div>
+  
+   </div>
+
+</div>
+   
